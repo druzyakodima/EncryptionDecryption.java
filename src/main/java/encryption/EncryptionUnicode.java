@@ -11,6 +11,7 @@ public class EncryptionUnicode implements Encryption {
 
         StringBuilder words = new StringBuilder();
         int count = key;
+
         for (char character : charArray) {
             key = count;
             while (key > 0) {

@@ -1,6 +1,7 @@
 package get;
 
 public class GetIndex {
+
     public int getIndex(String[] args, String s) {
         return getIdx(args, s);
     }

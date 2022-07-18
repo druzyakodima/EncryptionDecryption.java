@@ -14,6 +14,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+
         String[] args1 = {
                 "-alg", "unicode",
                 "-mode", "enc",
@@ -43,7 +44,6 @@ public class Main {
         int key = Integer.parseInt(args1[index]);
 
         if (Arrays.toString(args1).matches("(.*)-in(.*)")) {
-
             int indexIn = getIndex.getIndex(args1, "-in");
             File fileReader = new File(args1[indexIn]);
             fileReader.createNewFile();
