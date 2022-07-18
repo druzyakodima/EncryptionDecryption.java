@@ -10,8 +10,8 @@ public class GetChar {
         GetIndex getIndex = new GetIndex();
 
         int index = getIndex.getIndex(args, s);
-
         char[] charArray = new char[args.length - index];
+
         for (int i = index; i < args.length; i++) {
             charArray = args[i].toCharArray();
             break;

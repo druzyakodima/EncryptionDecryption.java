@@ -47,6 +47,7 @@ public class Main {
             int indexIn = getIndex.getIndex(args1, "-in");
             File fileReader = new File(args1[indexIn]);
             fileReader.createNewFile();
+
             try (BufferedReader reader = new BufferedReader(new FileReader(fileReader))) {
                 encWords.add(reader.readLine());
                 char[] arr = encWords.toString().replace("[", "").replace("]", "").toCharArray();

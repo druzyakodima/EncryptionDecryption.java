@@ -14,6 +14,7 @@ public class DecryptionUnicode implements Decryption {
 
         for (char character : charArray) {
             key = count;
+
             while (key > 0) {
                 character -= 1;
                 key--;
