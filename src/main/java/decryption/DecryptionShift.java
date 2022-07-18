@@ -1,6 +1,7 @@
 package decryption;
 
-public class DecryptionShift implements Decryption{
+public class DecryptionShift implements Decryption {
+
     @Override
     public String decryption(char[] charArray, int key) {
         return decryptionShift(charArray, key);
@@ -10,6 +11,7 @@ public class DecryptionShift implements Decryption{
 
         StringBuilder words = new StringBuilder();
         int count = key;
+
         for (char c : charArray) {
             key = count;
             int length = c >= 65 && c <= 91 ? 65 : 97;

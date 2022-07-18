@@ -1,6 +1,7 @@
 package encryption;
 
-public class EncryptionShift implements Encryption{
+public class EncryptionShift implements Encryption {
+
     @Override
     public String encryption(char[] charArray, int key) {
         return encryptionShift(charArray, key);
@@ -10,6 +11,7 @@ public class EncryptionShift implements Encryption{
 
         StringBuilder words = new StringBuilder();
         int count = key;
+
         for (char c : charArray) {
             key = count;
             int length = c >= 65 && c <= 91 ? 91 : 123;
