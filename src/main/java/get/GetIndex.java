@@ -8,8 +8,8 @@ public class GetIndex {
 
     private int getIdx(String[] args, String s) {
         int index = 0;
-        for (int i = 0; i < args.length; i++) {
 
+        for (int i = 0; i < args.length; i++) {
             if (args[i].matches(s)) {
                 index = i + 1;
                 break;

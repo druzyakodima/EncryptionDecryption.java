@@ -8,7 +8,6 @@ public class GetChar {
 
     private char[] getCharacter(String[] args, String s) {
         GetIndex getIndex = new GetIndex();
-
         int index = getIndex.getIndex(args, s);
         char[] charArray = new char[args.length - index];
 

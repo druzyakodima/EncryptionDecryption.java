@@ -15,7 +15,6 @@ public class DecryptionShift implements Decryption {
         for (char c : charArray) {
             key = count;
             int length = c >= 65 && c <= 91 ? 65 : 97;
-
             if (c >= 'A') {
                 for (int i = c; i >= length; i--) {
                     c = (char) i;

@@ -26,8 +26,8 @@ public class Main {
         GetChar getChar = new GetChar();
         ArrayList<String> encWords = new ArrayList<>();
 
-        String flag = Arrays.toString(args1).matches("(.*)enc(.*)") ? "enc" : Arrays.toString(args1).matches("(.*)dec(.*)") ? "dec" : "enc";
-        String alg = Arrays.toString(args1).matches("(.*)shift(.*)") ? "shift" : Arrays.toString(args1).matches("(.*)unicode(.*)") ? "unicode" : "shift";
+        String flag = Arrays.toString(args).matches("(.*)enc(.*)") ? "enc" : Arrays.toString(args).matches("(.*)dec(.*)") ? "dec" : "enc";
+        String alg = Arrays.toString(args).matches("(.*)shift(.*)") ? "shift" : Arrays.toString(args).matches("(.*)unicode(.*)") ? "unicode" : "shift";
 
         Decryption decryption;
         Encryption encryption;
@@ -40,12 +40,12 @@ public class Main {
             decryption = new DecryptionShift();
         }
 
-        int index = getIndex.getIndex(args1, "-key");
-        int key = Integer.parseInt(args1[index]);
+        int index = getIndex.getIndex(args, "-key");
+        int key = Integer.parseInt(args[index]);
 
-        if (Arrays.toString(args1).matches("(.*)-in(.*)")) {
-            int indexIn = getIndex.getIndex(args1, "-in");
-            File fileReader = new File(args1[indexIn]);
+        if (Arrays.toString(args).matches("(.*)-in(.*)")) {
+            int indexIn = getIndex.getIndex(args, "-in");
+            File fileReader = new File(args[indexIn]);
             fileReader.createNewFile();
 
             try (BufferedReader reader = new BufferedReader(new FileReader(fileReader))) {
@@ -66,14 +66,14 @@ public class Main {
         }
 
 
-        if (Arrays.toString(args1).matches("(.*)-data(.*)")) {
-            char[] charArray = getChar.getChar(args1, "-data");
+        if (Arrays.toString(args).matches("(.*)-data(.*)")) {
+            char[] charArray = getChar.getChar(args, "-data");
             System.out.println(flag.equals("dec") ? decryption.decryption(charArray, key) : encryption.encryption(charArray, key));
         }
 
-        if (Arrays.toString(args1).matches("(.*)-out(.*)")) {
-            int indexOut = getIndex.getIndex(args1, "-out");
-            File fileWriter = new File(args1[indexOut]);
+        if (Arrays.toString(args).matches("(.*)-out(.*)")) {
+            int indexOut = getIndex.getIndex(args, "-out");
+            File fileWriter = new File(args[indexOut]);
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileWriter))) {
 
                 writer.write(encWords.toString().replace("[", "").replace("]", ""));

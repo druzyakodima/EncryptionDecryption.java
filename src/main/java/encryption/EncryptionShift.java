@@ -15,7 +15,6 @@ public class EncryptionShift implements Encryption {
         for (char c : charArray) {
             key = count;
             int length = c >= 65 && c <= 91 ? 91 : 123;
-
             if (c >= 'A') {
                 for (int i = c; i <= length; i++) {
                     if (i == length) {
